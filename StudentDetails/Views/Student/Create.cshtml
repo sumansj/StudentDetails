@@ -1,0 +1,43 @@
+﻿@model StudentDetails.Models.Students
+@{
+    ViewData["Title"] = "Create";
+}
+
+<head>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Students</h1>
+            <form asp-controller="Student" asp-action="Save" method="post" autocomplete="off">
+                <div class="form-group">
+                    <label asp-for="StudentName" class="control-label"></label>
+                    <input asp-for="StudentName" class="form-control" placeholder="Enter Name"/>
+                    <span asp-validation-for="StudentName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <textarea asp-for="Address" class="form-control"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                </br>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary w-100" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
